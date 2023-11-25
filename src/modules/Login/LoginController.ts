@@ -6,6 +6,7 @@ class LoginController {
         const { username, password } = req.body;
         const loginUseCase = new LoginUseCase();
         const result = await loginUseCase.execute(username, password);
+
         return res.status(result.status).json({ message: result.message });
     }
 }
